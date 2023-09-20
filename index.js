@@ -72,6 +72,15 @@ app.delete('/clients/:id',checkOrderId, (request, response) => {
     return response.status(204).json()
 })
 
+// Pesquisando  um usuario especifico 
+app.get('/clients/:id',checkOrderId, (request, response) => {
+    const index = request.clientIndex
+
+    const orderSpecific = clients[index]
+
+    return response.json(orderSpecific)
+})
+
 
 
 
